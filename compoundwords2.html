@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Click the button.</title>
+  <style>
+    /* Make the result text bigger */
+    #result {
+      font-size: 2em;
+    }
+  </style>
+  <script>
+    // Vertical axis words (first word)
+    const verticalWords = [
+      "dumb", "scum", "douche", "shit", "dick", "fuck", "dip", "ass", 
+      "dog", "lib", "butt", "cock", "dirt", "bum", "trump", "twat", 
+      "cum", "piss", "wank", "poop"
+    ];
+
+    // Horizontal axis words (second word)
+    const horizontalWords = [
+      "ass", "bag", "shit", "head", "hard", "tard", "fuck", "lord", 
+      "wit", "face", "sucker", "boy", "slain", "stick", "nuzzle", 
+      "down", "wang", "nugget", "goblin"
+    ];
+
+    function generateCompoundWord() {
+      // Pick a random word from each array
+      const first = verticalWords[Math.floor(Math.random() * verticalWords.length)];
+      const second = horizontalWords[Math.floor(Math.random() * horizontalWords.length)];
+      
+      // Form the compound word
+      const compoundWord = first + second;
+      
+      // Display the result in bold
+      document.getElementById("result").innerHTML = 
+        `<strong>Hey, you're a real ${compoundWord}.</strong>`;
+    }
+  </script>
+</head>
+<body>
+  <h1>Click the button.</h1>
+  <button onclick="generateCompoundWord()">Click me</button>
+  <p id="result"></p>
+</body>
+</html>
